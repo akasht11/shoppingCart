@@ -1,0 +1,50 @@
+<div *ngIf="cartItems.length === 0" class="cartempty row justify-content-center">
+  <strong>Your cart is empty.</strong>   
+  <img class="card-img-top" src="assets/img/emptycart.jpg" alt="Card image cap" width="300" height="400">
+</div>
+
+<div class="card" *ngFor="let item of cartItems">
+  <table class="table table-hover shopping-cart-wrap">
+  <thead class="text-muted">
+  <tr>
+    <th scope="col">Product</th>
+    <th scope="col" width="120">Quantity</th>
+    <th scope="col" width="120">Price</th>
+    <th scope="col" width="200" class="text-right">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+  <figure class="media">
+    <div class="img-wrap"><img [src]="item.imageurl" width=75% class="img-thumbnail img-sm"></div>
+    <figcaption class="media-body">
+      <h6 class="title text-truncate"> {{item.productName}} </h6>
+      <dl class="param param-inline small">
+        <dt> {{item.productId}} </dt>
+      </dl>
+      <dl class="param param-inline small">
+        <dt>Description: </dt>
+        <dd>{{item.desc}}</dd>
+      </dl>
+    </figcaption>
+  </figure> 
+    </td>
+    <td> 
+      {{item.qty}}
+    </td>
+    <td> 
+      <div class="price-wrap"> 
+        <var class="price"> {{item.price | currency: 'INR'}} </var> 
+      </div>
+    </td>
+    <td class="text-right">
+    <button type="button" class="btn btn-outline-danger" (click)="removeFromCart(item.productId)"> × Remove</button>
+    </td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  <div *ngIf="cartItems.length !== 0" class="container">
+    <button class="btn btn-info btn-lg btn-success" type="button" routerLink="/checkout" routerLinkActive="active"><span>Checkout</span></button>
+  </div>
