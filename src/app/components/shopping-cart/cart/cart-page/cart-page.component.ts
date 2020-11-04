@@ -17,9 +17,10 @@ export class CartPageComponent implements OnInit {
     this.cartItems = this.pservice.cartCopy;
   }
 
-  removeFromCart(pid: any){
+  removeFromCart(pid: any, price: any){
     let removeIndex = this.cartItems.map(function(item) { return item.productId; }).indexOf(pid);
     this.cartItems.splice(removeIndex,1);
+    this.pservice.cartAmout -= price;
   }
 
 }
