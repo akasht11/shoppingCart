@@ -19,8 +19,8 @@ export class CheckoutComponent implements OnInit {
     email: new FormControl('',[Validators.required, Validators.email]),
     address: new FormControl('',Validators.required),
     ccname: new FormControl('',Validators.required),
-    ccnumber: new FormControl('',[Validators.required, Validators.pattern("^[0-9]*$")]),
-    ccexpiration: new FormControl('',Validators.required),
+    ccnumber: new FormControl('',[Validators.required, Validators.pattern("^[0-9]*$"), Validators.maxLength(16)]),
+    ccexpiration: new FormControl('',[Validators.required, Validators.pattern("^[0-9]*$")]),
     cccvv: new FormControl('',[Validators.required, Validators.maxLength(3)]),
   });
 

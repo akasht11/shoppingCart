@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule, routingComponets } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -30,6 +30,7 @@ import { SearchfilterPipe } from './components/shared/pipe/searchfilter.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
   ],
   providers: [ProductService, MessengerService],
