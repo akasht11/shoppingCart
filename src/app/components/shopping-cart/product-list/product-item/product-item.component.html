@@ -1,7 +1,7 @@
 <div class="card mb-4 box-shadow">
   <img class="card-img-top" width= 100% [src]="productItem.imageUrl" alt="Card image cap">
     <div class="card-body">
-      <strong>{{ productItem.name }}</strong>
+      <strong>{{ productItem.name }} | {{ productItem.mname }}</strong>
         <p class="card-text"><small>{{ productItem.price | currency:'INR' }}</small></p>
         <p class="card-text">{{ productItem.description }}</p>
         <div class="d-flex justify-content-between align-items-center">
